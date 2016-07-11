@@ -13,9 +13,9 @@ namespace TimeSheet
         public const int WEEK_COUNT = 2;
         public const int DAYS_IN_PAY_PERIOD = WEEK_COUNT * DAYS_IN_WEEK; //must be multiple DAYS_IN_WEEK;
 
-        private double[] overtime = new double[WEEK_COUNT]; //one array element for each week in the pay period
+        public double[] overtime = new double[WEEK_COUNT]; //one array element for each week in the pay period
 
-        private List<Day> days;
+        public static List<Day> days;
 
         public DateTime StartDate { get; private set; }
 
