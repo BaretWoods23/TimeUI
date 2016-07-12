@@ -21,7 +21,7 @@ namespace CardFormUI
         public int WeekNum = 0;
         public int SecondSunOnList = 7;
         public int i = 0;
-        TimeSheet.Day.HourTypes HourType = TimeSheet.Day.HourTypes.REGULAR;
+        public TimeSheet.Day.HourTypes HourType = TimeSheet.Day.HourTypes.REGULAR;
         public CardUI()
         {
             InitializeComponent();
@@ -88,34 +88,24 @@ namespace CardFormUI
         private void Save_Click(object sender, EventArgs e)
         {
             foreach (TextBox tb in this.Controls.OfType<TextBox>().OrderBy(ord => ord.TabIndex))
+            {
+
+                if (tb.Text != string.Empty)
                 {
-                    if (tb.Text != string.Empty)
+                    SetHourType();
+                    if (Week1Lbl.Checked)
                     {
-                        if (Week1Lbl.Checked)
-                        {
-                            TC.days[DayChecker].SetHours(HourType, double.Parse(tb.Text));
-                        }
-                        else if (Week2Lbl.Checked)
-                        {
-                            TC.days[DayChecker+TimeCard.DAYS_IN_WEEK].SetHours(HourType, double.Parse(tb.Text));
-                        }
+                        TC.days[DayChecker].SetHours(HourType, double.Parse(tb.Text));
+                        Debug.WriteLine(HourType.ToString());
                     }
-                SetHourType();
+                    else if (Week2Lbl.Checked)
+                    {
+                        TC.days[DayChecker+TimeCard.DAYS_IN_WEEK].SetHours(HourType, double.Parse(tb.Text));
+                    }
+                }
                 DayCheckTypeLoop();
+                TypeChecker++;
             }
-            Debug.WriteLine("HELLO");
-            Debug.WriteLine(TC.days[0].GetHours(TimeSheet.Day.HourTypes.REGULAR).ToString());
-            Debug.WriteLine(TC.days[0].GetHours(TimeSheet.Day.HourTypes.SICK).ToString());
-            Debug.WriteLine(TC.days[0].GetHours(TimeSheet.Day.HourTypes.VACATION).ToString());
-            Debug.WriteLine(TC.days[1].GetHours(TimeSheet.Day.HourTypes.REGULAR).ToString());
-            Debug.WriteLine(TC.days[1].GetHours(TimeSheet.Day.HourTypes.SICK).ToString());
-            Debug.WriteLine(TC.days[1].GetHours(TimeSheet.Day.HourTypes.VACATION).ToString());
-            Debug.WriteLine(TC.days[2].GetHours(TimeSheet.Day.HourTypes.REGULAR).ToString());
-            Debug.WriteLine(TC.days[2].GetHours(TimeSheet.Day.HourTypes.SICK).ToString());
-            Debug.WriteLine(TC.days[2].GetHours(TimeSheet.Day.HourTypes.VACATION).ToString());
-            Debug.WriteLine(TC.days[3].GetHours(TimeSheet.Day.HourTypes.REGULAR).ToString());
-            Debug.WriteLine(TC.days[3].GetHours(TimeSheet.Day.HourTypes.SICK).ToString());
-            Debug.WriteLine(TC.days[3].GetHours(TimeSheet.Day.HourTypes.VACATION).ToString());
         }
         private void DayCheckTypeLoop()
         {
@@ -127,12 +117,15 @@ namespace CardFormUI
         }
         private void SetHourType()
         {
-            TypeChecker ++;
-            if (TypeChecker > 6 && TypeChecker <= 13) //Loops through Regular hours first, then goes to the second row after 6 loops.
+            if(TypeChecker < 7)
+            {
+                HourType = TimeSheet.Day.HourTypes.REGULAR;
+            }
+            if (TypeChecker > 6 && TypeChecker <= 13)
             {
                 HourType = TimeSheet.Day.HourTypes.SICK;
             }
-            else if (TypeChecker > 13) //Now loops through third row.
+            else if (TypeChecker > 13)
             {
                 HourType = TimeSheet.Day.HourTypes.VACATION;
             }
