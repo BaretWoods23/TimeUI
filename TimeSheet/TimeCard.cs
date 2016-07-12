@@ -15,7 +15,7 @@ namespace TimeSheet
 
         public double[] overtime = new double[WEEK_COUNT]; //one array element for each week in the pay period
 
-        public static List<Day> days;
+        public List<Day> days;
 
         public DateTime StartDate { get; private set; }
 

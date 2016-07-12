@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.StartDate = new System.Windows.Forms.Label();
+            this.Start = new System.Windows.Forms.Label();
             this.RegLbl = new System.Windows.Forms.Label();
             this.SickLbl = new System.Windows.Forms.Label();
             this.VacLbl = new System.Windows.Forms.Label();
@@ -73,18 +73,19 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.Exit = new System.Windows.Forms.Button();
+            this.StartDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // StartDate
+            // Start
             // 
-            this.StartDate.AutoSize = true;
-            this.StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.StartDate.Location = new System.Drawing.Point(5, 8);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(122, 18);
-            this.StartDate.TabIndex = 24;
-            this.StartDate.Text = "Start Date: 7/3/16";
+            this.Start.AutoSize = true;
+            this.Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Start.Location = new System.Drawing.Point(5, 8);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(78, 18);
+            this.Start.TabIndex = 24;
+            this.Start.Text = "Start Date:";
             // 
             // RegLbl
             // 
@@ -390,7 +391,7 @@
             this.SunDateLbl.Name = "SunDateLbl";
             this.SunDateLbl.Size = new System.Drawing.Size(31, 12);
             this.SunDateLbl.TabIndex = 35;
-            this.SunDateLbl.Text = "7/8/16";
+            this.SunDateLbl.Text = "7/3/16";
             // 
             // MonDateLbl
             // 
@@ -401,7 +402,7 @@
             this.MonDateLbl.Name = "MonDateLbl";
             this.MonDateLbl.Size = new System.Drawing.Size(31, 12);
             this.MonDateLbl.TabIndex = 36;
-            this.MonDateLbl.Text = "7/9/16";
+            this.MonDateLbl.Text = "7/4/16";
             // 
             // TueDateLbl
             // 
@@ -410,9 +411,9 @@
             this.TueDateLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.TueDateLbl.Location = new System.Drawing.Point(237, 59);
             this.TueDateLbl.Name = "TueDateLbl";
-            this.TueDateLbl.Size = new System.Drawing.Size(36, 12);
+            this.TueDateLbl.Size = new System.Drawing.Size(31, 12);
             this.TueDateLbl.TabIndex = 37;
-            this.TueDateLbl.Text = "7/10/16";
+            this.TueDateLbl.Text = "7/5/16";
             // 
             // WedDateLbl
             // 
@@ -421,9 +422,9 @@
             this.WedDateLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.WedDateLbl.Location = new System.Drawing.Point(287, 59);
             this.WedDateLbl.Name = "WedDateLbl";
-            this.WedDateLbl.Size = new System.Drawing.Size(36, 12);
+            this.WedDateLbl.Size = new System.Drawing.Size(31, 12);
             this.WedDateLbl.TabIndex = 38;
-            this.WedDateLbl.Text = "7/11/16";
+            this.WedDateLbl.Text = "7/6/16";
             // 
             // ThuDateLbl
             // 
@@ -432,9 +433,9 @@
             this.ThuDateLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ThuDateLbl.Location = new System.Drawing.Point(337, 59);
             this.ThuDateLbl.Name = "ThuDateLbl";
-            this.ThuDateLbl.Size = new System.Drawing.Size(36, 12);
+            this.ThuDateLbl.Size = new System.Drawing.Size(31, 12);
             this.ThuDateLbl.TabIndex = 39;
-            this.ThuDateLbl.Text = "7/12/16";
+            this.ThuDateLbl.Text = "7/7/16";
             // 
             // FriDateLbl
             // 
@@ -443,9 +444,9 @@
             this.FriDateLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.FriDateLbl.Location = new System.Drawing.Point(387, 59);
             this.FriDateLbl.Name = "FriDateLbl";
-            this.FriDateLbl.Size = new System.Drawing.Size(36, 12);
+            this.FriDateLbl.Size = new System.Drawing.Size(31, 12);
             this.FriDateLbl.TabIndex = 40;
-            this.FriDateLbl.Text = "7/13/16";
+            this.FriDateLbl.Text = "7/8/16";
             // 
             // SatDateLbl
             // 
@@ -454,9 +455,9 @@
             this.SatDateLbl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.SatDateLbl.Location = new System.Drawing.Point(435, 59);
             this.SatDateLbl.Name = "SatDateLbl";
-            this.SatDateLbl.Size = new System.Drawing.Size(36, 12);
+            this.SatDateLbl.Size = new System.Drawing.Size(31, 12);
             this.SatDateLbl.TabIndex = 41;
-            this.SatDateLbl.Text = "7/14/16";
+            this.SatDateLbl.Text = "7/9/16";
             // 
             // listBox1
             // 
@@ -498,6 +499,17 @@
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
             // 
+            // StartDate
+            // 
+            this.StartDate.AutoSize = true;
+            this.StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.StartDate.Location = new System.Drawing.Point(88, 8);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(48, 18);
+            this.StartDate.TabIndex = 45;
+            this.StartDate.Text = "7/3/16";
+            // 
             // CardUI
             // 
             this.AcceptButton = this.Save;
@@ -506,6 +518,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.Exit;
             this.ClientSize = new System.Drawing.Size(486, 303);
+            this.Controls.Add(this.StartDate);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -550,7 +563,7 @@
             this.Controls.Add(this.VacLbl);
             this.Controls.Add(this.SickLbl);
             this.Controls.Add(this.RegLbl);
-            this.Controls.Add(this.StartDate);
+            this.Controls.Add(this.Start);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CardUI";
             this.Text = "CardUI";
@@ -562,7 +575,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label StartDate;
+        private System.Windows.Forms.Label Start;
         private System.Windows.Forms.Label RegLbl;
         private System.Windows.Forms.Label SickLbl;
         private System.Windows.Forms.Label VacLbl;
@@ -607,6 +620,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Label StartDate;
     }
 }
 
