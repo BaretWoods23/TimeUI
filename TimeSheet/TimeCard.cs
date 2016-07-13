@@ -14,6 +14,9 @@ namespace TimeSheet
         public const int DAYS_IN_PAY_PERIOD = WEEK_COUNT * DAYS_IN_WEEK; //must be multiple DAYS_IN_WEEK;
 
         public double[] overtime = new double[WEEK_COUNT]; //one array element for each week in the pay period
+        public double[] RegularHours = new double[WEEK_COUNT];
+        public double[] SickHours = new double[WEEK_COUNT];
+        public double[] VacationHours = new double[WEEK_COUNT];
 
         public List<Day> days;
 
@@ -57,10 +60,49 @@ namespace TimeSheet
                 {
                     overtime[i] -= 40;
                 }
+                else
+                {
+                    overtime[i] = 0;
+                }
             }
             return overtime;
         }
-
+        public double[] GetTotalRegularHours()
+        {
+            for (int i = 0; i < RegularHours.Length; i++)
+            {
+                RegularHours[i] = 0;
+            }
+            for (int i = 0; i < DAYS_IN_PAY_PERIOD; i++)
+            {
+                RegularHours[i / DAYS_IN_WEEK] += days[i].GetHours(Day.HourTypes.REGULAR);
+            }
+            return RegularHours;
+        }
+        public double[] GetTotalSickHours()
+        {
+            for (int i = 0; i < SickHours.Length; i++)
+            {
+                SickHours[i] = 0;
+            }
+            for (int i = 0; i < DAYS_IN_PAY_PERIOD; i++)
+            {
+                SickHours[i / DAYS_IN_WEEK] += days[i].GetHours(Day.HourTypes.SICK);
+            }
+            return SickHours;
+        }
+        public double[] GetTotalVacationHours()
+        {
+            for (int i = 0; i < VacationHours.Length; i++)
+            {
+                VacationHours[i] = 0;
+            }
+            for (int i = 0; i < DAYS_IN_PAY_PERIOD; i++)
+            {
+                VacationHours[i / DAYS_IN_WEEK] += days[i].GetHours(Day.HourTypes.VACATION);
+            }
+            return VacationHours;
+        }
         public double GetHours(Day.HourTypes type)
         {
             double hours = 0;

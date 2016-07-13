@@ -498,6 +498,7 @@
             this.Exit.TabIndex = 44;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click_1);
             // 
             // StartDate
             // 
